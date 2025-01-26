@@ -38,8 +38,28 @@ import javax.swing.JOptionPane;
 
 public class RandomGuess {
     public static void main(String[] args) {
+        
         int randomNum = (1 + (int)(Math.random() * 10));
-        JOptionPane.showMessageDialog(null,"Think of a random number between 1 and 10 ");
-        JOptionPane.showMessageDialog(null,"The number is " + randomNum + "!");
+        int guess = 0;
+        try {
+            while (true) {
+                guess = Integer.parseInt(JOptionPane.showInputDialog("Enter your guess between 1-10:"));
+                if (guess < 1 || guess > 10) {
+                    JOptionPane.showMessageDialog(null, "Please enter a number between 1-10!");
+                    continue;
+                }
+                break;
+            }
+            
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Please enter a valid number!");
+        }
+
+        String messageDialog = "You got it right! The number was " + randomNum + "!";
+        if (guess != randomNum) {
+            messageDialog = "Sorry, but the number was " + randomNum + ".";
+        }
+
+        JOptionPane.showMessageDialog(null,messageDialog);
     }
 }
