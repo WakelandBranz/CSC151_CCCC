@@ -6,6 +6,38 @@ Write an application named DemoSalesperson that declares an array of 10 Salesper
 Display the 10 Salesperson objects. Save the files as Salesperson.java and DemoSalesperson.java.
  */
 
-public class Salesperson {
+ public class Salesperson {
+    private int idNumber;
+    private double annualSales;
     
+    public Salesperson(int id, double sales) {
+        idNumber = id;
+        annualSales = sales;
+    }
+    
+    /* GETTERS */
+
+    public int getIdNumber() {
+        return idNumber;
+    }
+
+    public double getAnnualSales() {
+        return annualSales;
+    }
+
+    /* SETTERS */
+    
+    public void setIdNumber(int id) {
+        idNumber = id;
+    }
+    
+    public void setAnnualSales(double sales) {
+        annualSales = sales;
+    }
+
+    /// I learned this from AP Computer Science A
+    @Override
+    public String toString() {
+        return "Salesperson ID: " + idNumber + ", Annual Sales: $" + annualSales;
+    }
 }

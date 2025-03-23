@@ -7,5 +7,19 @@ Display the 10 Salesperson objects. Save the files as Salesperson.java and DemoS
  */
 
 public class DemoSalesperson {
-    
+    public static void main(String[] args) {
+        Salesperson[] salesTeam = new Salesperson[10];
+        
+        // Create 10 Salesperson objects with ID 9999 and sales value 0
+        for (int i = 0; i < salesTeam.length; i++) {
+            salesTeam[i] = new Salesperson(9999, 0.0);
+        }
+        
+        System.out.println("Salesperson Information:");
+        System.out.println("------------------------");
+        
+        for (int i = 0; i < salesTeam.length; i++) {
+            System.out.println("Salesperson #" + (i + 1) + ": " + salesTeam[i]);
+        }
+    }
 }

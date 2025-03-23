@@ -32,8 +32,15 @@ public class BirthdayReminder {
         name = input.nextLine();
         
         while (!name.equals(SENTINEL) && count < MAX_FRIENDS) {
-            System.out.print("Enter " + name + "'s birthdate: ");
+            System.out.print("Enter " + name + "'s birthdate (MM/DD/YYYY): ");
             birthdate = input.nextLine();
+            
+            // Validate birthdate format (checking for MM/DD/YYYY format - 10 characters)
+            while (birthdate.length() != 10) {
+                System.out.println("Error: Invalid birthdate format. Please use MM/DD/YYYY format.");
+                System.out.print("Enter " + name + "'s birthdate (MM/DD/YYYY): ");
+                birthdate = input.nextLine();
+            }
             
             names[count] = name;
             birthdates[count] = birthdate;
@@ -79,7 +86,6 @@ public class BirthdayReminder {
                 }
             }
             
-            // Display error message if name was not found
             if (!found) {
                 System.out.println("Error: The name '" + name + "' was not found.");
             }
