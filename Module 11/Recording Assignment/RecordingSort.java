@@ -71,6 +71,7 @@ public class RecordingSort {
         scanner.close();
     }
 
+    /* Bubble sort implementations of specific sorting criteria */
     private static void sortTitle(Recording[] recordings) {
         Recording temp;
         for(int i = 0; i < recordings.length; i++) {
